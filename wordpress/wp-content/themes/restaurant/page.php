@@ -1,9 +1,6 @@
 <?php
 /**
- * Template Name: Restaurant front page template
- *
- * The template for displaying pages in full-width.
- * Add class .full-width to body_class in add_filter action in functions.php
+ * The template for displaying all pages.
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
@@ -15,11 +12,10 @@
  * @since Twenty Twelve 1.0
  */
 
-get_header(); 
-// load images in php for template development.
-?>
-<?php remove_filter ('the_content', 'wpautop'); ?>
-	<div class="flexslider">
+get_header(); ?>
+	<?php if( is_front_page() && 'page' == get_option( 'show_on_front' )  ): ?>
+	<?php remove_filter ('the_content', 'wpautop'); ?>
+	<div class="flexslider" style="display:block;">
 	<ul class="slides">
 		<?php
 		global $wpdb;
@@ -57,4 +53,18 @@ get_header();
 		</div>
 	</div><!-- #primary -->
 <?php get_sidebar('front'); ?>
+
+	<?php else: ?>
+	<div id="primary" class="site-content">
+		<div id="content" role="main">
+
+			<?php while ( have_posts() ) : the_post(); ?>
+				<?php get_template_part( 'content', 'page' ); ?>
+				<?php //comments_template( '', true ); ?>
+			<?php endwhile; // end of the loop. ?>
+
+		</div><!-- #content -->
+	</div><!-- #primary -->
+<?php get_sidebar(); ?>
+<?php endif; ?>
 <?php get_footer(); ?>
