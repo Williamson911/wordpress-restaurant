@@ -739,7 +739,7 @@ function register_theme_menus() {
   // for post types
   add_filter('use_block_editor_for_post_type', '__return_false', 10);
 
-  function my_wpadmin_sidebar_menu() {
+ /* function my_wpadmin_sidebar_menu() {
     remove_menu_page( 'index.php' );  // 'Dashboard'
     remove_menu_page( 'upload.php' );   // 'Media'
     remove_menu_page( 'edit-comments.php' )
@@ -748,7 +748,7 @@ function register_theme_menus() {
     remove_submenu_page('plugins.php','plugin-editor.php');
 }
 add_action('admin_menu','my_wpadmin_sidebar_menu', 999);
-
+*/
 //remove Gutenberg
 function disable_gutenberg_editor() {
     return false;
