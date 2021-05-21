@@ -748,5 +748,42 @@ function register_theme_menus() {
     remove_submenu_page('plugins.php','plugin-editor.php');
 }
 add_action('admin_menu','my_wpadmin_sidebar_menu', 999);
+
+//remove Gutenberg
+function disable_gutenberg_editor() {
+    return false;
+}
+add_filter("use_block_editor_for_post_type", "disable_gutenberg_editor");
+
+add_action( 'widgets_init', 'wpb_load_widget' );
+
+// Renommer posts en recipes
+function change_post_menu_label() {
+    global $menu;
+    global $submenu;
+    $menu[5][0] = 'Recipes';
+    $submenu['edit.php'][5][0] = 'Recipes';
+    $submenu['edit.php'][10][0] = 'Add recipe';
+    $submenu['edit.php'][16][0] = 'Tags';
+    echo '';
+}
+add_action( 'admin_menu', 'change_post_menu_label' );
+
+function change_post_object_label() {
+    global $wp_post_types;
+    $labels = &$wp_post_types['post']->labels;
+    $labels->name = 'Recipes';
+    $labels->singular_name = 'Recipe';
+    $labels->add_new = 'Add Recipe';
+    $labels->add_new_item = 'Add Recipe';
+    $labels->edit_item = 'Edit Recipe';
+    $labels->new_item = 'Recipe';
+    $labels->view_item = 'View Recipe';
+    $labels->search_items = 'Search Recipes';
+    $labels->not_found = 'No Recipes found';
+    $labels->not_found_in_trash = 'No Recipes found in Trash';
+}
+add_action( 'init', 'change_post_object_label' );
+
  
 ?>
