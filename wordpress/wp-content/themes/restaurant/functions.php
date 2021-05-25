@@ -755,7 +755,7 @@ function disable_gutenberg_editor() {
 }
 add_filter("use_block_editor_for_post_type", "disable_gutenberg_editor");
 
-add_action( 'widgets_init', 'wpb_load_widget' );
+//add_action( 'widgets_init', 'wpb_load_widget' );
 
 // Renommer posts en recipes
 function change_post_menu_label() {
