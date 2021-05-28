@@ -2,7 +2,7 @@
 Theme Name: devres
 Description: my first wordpress theme
 Author: Pierre et William
-Version: 1.0
+Version: 1.4
 */
 
 
@@ -113,17 +113,35 @@ a {text-decoration: none;}
 .boxshadow {box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;}
 
 .intro{
-    padding: 10em 15em;
-    position: relative;
-    display: flex;
-    align-items: center;
+    width: 100%;
+    padding-right: 0.9375em;
+    padding-left: 0.9375em;
+    margin-right: auto;
+    margin-left: auto;
 }
+
+.introbox {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;}
+
 .introtext{
-    position: absolute;
-    right: 35em;
-    background-color:#fff;
-    padding: 10em;
-    width: 30%;
+    margin-left: -12.5em;
+    margin-top: 9.375em;
+    background-color: white;
+    padding: 1rem !important;
+    margin-bottom: 3rem !important;
 }
 .introtext .title {text-transform: capitalize;}
 

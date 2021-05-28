@@ -36,10 +36,10 @@
 
 </section>
 
-<section class="intro">
-
+<section>
+<div  class="intro">
     <img class="introimg" src="<?= get_field('intro_image')['url']; ?>" alt="">
-
+<div class="introbox">
     <div class="introtext boxshadow">
         <p class="title"> <?= get_field('intro_title'); ?> </p>
         <p class="subtitle"> <?= get_field('intro_subtitle'); ?> </p>
@@ -47,8 +47,9 @@
         <p class="signature">
             <p class="subtitle"> <?= get_field('intro_signature'); ?> </p>
         </p>
+         </div>
     </div>
-
+</div>
     <img class="introhatch" src="<?php echo get_template_directory_uri(); ?>/assets/images/hachures-blanches.png" alt="">
 
 </section>
