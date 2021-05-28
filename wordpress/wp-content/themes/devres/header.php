@@ -32,3 +32,9 @@
 
 <?php wp_head(); ?>
 </head>
+<body <?php body_class(); ?>>
+    <header class="header">
+        <a href="<?= home_url('/'); ?>">
+            DEV RESTAURANT
+        </a>
+    </header>

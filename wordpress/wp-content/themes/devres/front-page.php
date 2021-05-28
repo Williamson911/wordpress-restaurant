@@ -9,7 +9,7 @@
         </div>
     </div>
     <div class="cards">
-        <div class="cardbox">
+        <div class="cardbox boxshadow">
                 <img src="<?php get_field('banner_top_cards_icon');?>" alt="quality-food-icon"/>
                 <div>
                     <h5 class="card-title quality-title"><?php echo get_field ( 'banner_top_cards_title_icon' );?></h5>  
@@ -17,7 +17,7 @@
                 </div>
             </div>
 
-            <div class="cardbox">
+            <div class="cardbox boxshadow">
                 <img src="<?php get_field('banner_top_cards_icon_2');?>" alt="quality-delivery-icon"/>
                 <div>
                     <h5 class="card-title quality-title"><?php echo get_field ( 'banner_top_cards_title_icon_2' );?></h5>  
@@ -25,7 +25,7 @@
                 </div>
             </div>
 
-            <div class="cardbox">
+            <div class="cardbox boxshadow">
                 <img src="<?php get_field('banner_top_icon_3');?>" alt="original-recipes-icon"/>
                 <div>
                     <h5 class="card-title quality-title"><?php echo get_field ( 'banner_top_cards_title_icon_3' );?></h5>  
@@ -40,7 +40,7 @@
 
     <img class="introimg" src="<?= get_field('intro_image')['url']; ?>" alt="">
 
-    <div class="introtext">
+    <div class="introtext boxshadow">
         <p class="title"> <?= get_field('intro_title'); ?> </p>
         <p class="subtitle"> <?= get_field('intro_subtitle'); ?> </p>
         <p> <?= get_field('intro_text'); ?> </p>
