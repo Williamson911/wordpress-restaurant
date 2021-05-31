@@ -3,8 +3,8 @@
     <div class="bannerbox">
         <img class="bannerimg" src="<?= get_field('banner_top_img')['url']; ?>" alt="">
         <div class="bannertitle">
+        <h1 class="main-title"> <?= get_field('banner_top_main_title'); ?> </h1>
             <h2 class="subtitle"> <?= get_field('banner_top_subtitle'); ?> </h2>
-            <h1 class="main-title"> <?= get_field('banner_top_main_title'); ?> </h1>
             <a href="<?= get_field('banner_top_link')['url']; ?>"> &horbar;&horbar; <?= get_field('banner_top_link')['title']; ?> </a> 
         </div>
     </div>
@@ -60,34 +60,34 @@
 <?php
    
     $args = array(
-    'category_name' => 'Restaurant',
+    'category_name' => 'restaurants',
     
             
     );
     $the_query = new WP_Query( $args );
     
     
-    $restaurant = get_field("3_restaurants");
+    $restaurants = get_field("3_restaurants");
     $i = 0;
-    foreach ($restaurant AS $article){
+    foreach ($restaurants AS $article){
 
     if ($i == 0){
         $i++;
 ?>
 
-<div class="container-fluid  d-flex justify-content-center the-chef">
+<div class="">
     
-        <div class="card story">
-            <div class="card-body story-card-right shadow p-3 mb-5 ">
-                <h5 class="card-title discover-title"><?php echo $article["subtitle"];?></h5>
-                <h6 class="card-subtitle story-title"><?php echo $article ["title"];?></h6>
-                <p class="card-text story-text"><?php echo $article ["text"];;?></p>
-                <p class="d-flex justify-content-center">
-                    <a href="<?php the_permalink(); ?>" class="post__link"><button type="button" class="btn btn-dark">More infos !!!!</button></a>
+        <div class="">
+            <div class="">
+                <h5 class=""><?php echo $article["subtitle"];?></h5>
+                <h6 class="e"><?php echo $article ["title"];?></h6>
+                <p class=""><?php echo $article ["text"];;?></p>
+                <p class="">
+                    <a href="<?php the_permalink(); ?>" class=""><button type="button" class="btn">More infos !!!!</button></a>
                 </p>
             </div>
         </div> <!-- END OF CARD STORY -->
-        <img src="<?php echo $article ["img"];?>" class="resto-img col-lg-6  col-sm-12" /> 
+        <img src="<?php echo $article ["img"];?>" class="" /> 
     </div> <!-- END OF THE CHEF -->
    
    
@@ -98,14 +98,14 @@
         ?>
     
     <div class="">
-        <img src="<?php echo $article ["img"];?>" class="resto-img"/> 
-            <div class="card story">
-                <div class="card-body story-card shadow p-3 mb-5 ">
-                    <h5 class="card-title discover-title"><?php echo $article["subtitle"];?></h5>
-                    <h6 class="card-subtitle story-title"><?php echo $article["title"];?></h6>
-                    <p class="card-text story-text"><?php echo $article["text"];?></p>
-                    <p class="d-flex justify-content-center">
-                        <a href="<?php the_permalink(); ?>" class="post__link"><button type="button" class="btn btn-dark">More lol infos</button></a>
+        <img src="<?php echo $article ["img"];?>" class=""/> 
+            <div class="">
+                <div class="">
+                    <h5 class=""><?php echo $article["subtitle"];?></h5>
+                    <h6 class=""><?php echo $article["title"];?></h6>
+                    <p class=""><?php echo $article["text"];?></p>
+                    <p class="">
+                        <a href="<?php the_permalink(); ?>" class=""><button type="button" class="btn">More lol infos</button></a>
                     </p>
                 </div>
             </div> <!-- END OF CARD STORY -->       
