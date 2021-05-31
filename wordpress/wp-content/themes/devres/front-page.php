@@ -36,10 +36,8 @@
 
 </section>
 
-<section>
-<div  class="intro">
+<section class="intro">
     <img class="introimg" src="<?= get_field('intro_image')['url']; ?>" alt="">
-<div class="introbox">
     <div class="introtext boxshadow">
         <p class="title"> <?= get_field('intro_title'); ?> </p>
         <p class="subtitle"> <?= get_field('intro_subtitle'); ?> </p>
@@ -48,11 +46,80 @@
             <p class="subtitle"> <?= get_field('intro_signature'); ?> </p>
         </p>
          </div>
-    </div>
-</div>
     <img class="introhatch" src="<?php echo get_template_directory_uri(); ?>/assets/images/hachures-blanches.png" alt="">
 
 </section>
 
-<?php get_template_part('parts/restaurants') ?>
-<?php get_template_part('parts/discover-menu') ?>
+<div class="greyhatch">
+<div class="">
+    <p class="discoverrestaurant"> Discover our franchise </p>
+    <p class="ourrestaurant"> Our restaurants </p>
+   
+        
+
+<?php
+   
+    $args = array(
+    'category_name' => 'Restaurant',
+    
+            
+    );
+    $the_query = new WP_Query( $args );
+    
+    
+    $restaurant = get_field("3_restaurants");
+    $i = 0;
+    foreach ($restaurant AS $article){
+
+    if ($i == 0){
+        $i++;
+?>
+
+<div class="container-fluid  d-flex justify-content-center the-chef">
+    
+        <div class="card story">
+            <div class="card-body story-card-right shadow p-3 mb-5 ">
+                <h5 class="card-title discover-title"><?php echo $article["subtitle"];?></h5>
+                <h6 class="card-subtitle story-title"><?php echo $article ["title"];?></h6>
+                <p class="card-text story-text"><?php echo $article ["text"];;?></p>
+                <p class="d-flex justify-content-center">
+                    <a href="<?php the_permalink(); ?>" class="post__link"><button type="button" class="btn btn-dark">More infos !!!!</button></a>
+                </p>
+            </div>
+        </div> <!-- END OF CARD STORY -->
+        <img src="<?php echo $article ["img"];?>" class="resto-img col-lg-6  col-sm-12" /> 
+    </div> <!-- END OF THE CHEF -->
+   
+   
+    <?php 
+    
+    } else {  
+        
+        ?>
+    
+    <div class="">
+        <img src="<?php echo $article ["img"];?>" class="resto-img"/> 
+            <div class="card story">
+                <div class="card-body story-card shadow p-3 mb-5 ">
+                    <h5 class="card-title discover-title"><?php echo $article["subtitle"];?></h5>
+                    <h6 class="card-subtitle story-title"><?php echo $article["title"];?></h6>
+                    <p class="card-text story-text"><?php echo $article["text"];?></p>
+                    <p class="d-flex justify-content-center">
+                        <a href="<?php the_permalink(); ?>" class="post__link"><button type="button" class="btn btn-dark">More lol infos</button></a>
+                    </p>
+                </div>
+            </div> <!-- END OF CARD STORY -->       
+    </div> 
+
+    <?php 
+      $i=0;
+}
+} 
+  
+    ?>
+
+
+        <?php ?>
+
+        <?php get_template_part('template-parts/post/post-recipe') ?>
+        <?php get_template_part('template-parts/post/post-recipe-cards') ?>
