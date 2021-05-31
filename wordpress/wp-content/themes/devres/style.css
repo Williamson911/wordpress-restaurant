@@ -2,7 +2,7 @@
 Theme Name: devres
 Description: my first wordpress theme
 Author: Pierre et William
-Version: 1.0
+Version: 1.4
 */
 
 
@@ -16,11 +16,8 @@ Version: 1.0
 }
 html {  
     font-size: 62.5%;
-    --color-white: #fff;
-    --color-black: #292929;
-    --color-grey: #f5f5f5;
-    --color-darken-grey: #d6d6d6;
     font-family: "Poppins", sans-serif;
+    height: 0px;
 }
 body {
     margin: 0;
@@ -35,6 +32,7 @@ ul, ol {
     list-style-type: none;
 }
 a {text-decoration: none;}
+
 .title {
     font-size: 4.6rem;
     font-weight: 700;
@@ -42,16 +40,18 @@ a {text-decoration: none;}
 }
 .subtitle {
     font-size: 4.2rem;
-    font-weight: 400;
+    font-weight: 400;    
 }
 .main-title {
     font-size: 10rem;
+    color:#fff;
     font-weight: 600;
     text-transform: uppercase;
 }
 .main-subtitle {
     font-size: 6rem;
     font-weight: 400;
+    color:#fff;
 }
 .icon {
     width: 1.5rem;
@@ -60,75 +60,36 @@ a {text-decoration: none;}
     max-height: 1.5rem;
 }
 
-/* ---------------Header----------------- */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 3em 10em;
-    position: absolute;
-    width: 87%;
-    z-index: 200;
-}
-header .title {
-    color: var(--color-white);
-}
-.header div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-.menu-nav{
-    list-style-type: none;
-    display: flex;
-}
-.menu-nav li a{
-    padding: 1em;
-    color: var(--color-white);
-    font-size: 1.5rem;
-    font-weight: 500;
-}
-.burger-icon {display: none;}
-.menu-nav__icon {height: 1.6em;}
 
 /* ---------------------Frontpage------------------- */
 /* banner */
-.banner__title {
+.bannerbox {
     position: relative;
-    color: var(--color-white);
     overflow: hidden;
 }
-.banner__title__img {
+.bannerimg {
     z-index: -10;
-    height: 100vh;
     width: auto;
     min-width: 100%;
     position: relative;
     margin-left: 50%;
     transform: translateX(-50%);
 }
-.banner__title__hatch {
-    transform: rotate(180deg);
-    position: relative;
-    bottom: 3em;
-    width: 100vw;
-    max-width: 100%;
-    height: 3em;
-}
-.banner__title__text {
+
+.bannertitle {
     padding: 5em 15em;
     width: 50%;
     z-index: 10;
     position: absolute;
     top: 10em;
 }
-.banner__title__text a{
-    color: var(--color-white);
+.bannertitle a{
+    color:#fff;
     padding: 1.5em 0;
     font-size: 1.5rem;
     font-weight: 600;
 }
-.banner__pros {
+.cards {
     display: flex;
     justify-content: space-between;
     margin-top: -20em;
@@ -137,15 +98,63 @@ header .title {
     position: relative;
     z-index: 20;
 }
-.banner__pros__box {
+.cardbox {
     text-align: center;
     margin: 2em;
     padding: 4em;
-    background-color: var(--color-white);
+    background-color:#fff;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 3em 3em 0 0;
-    box-shadow: 2px 2px 7px var(--color-grey);
 }
-.banner__pros__box img {padding: 1em;}
+.cardbox img {padding: 1em;}
+
+.boxshadow {box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;}
+
+.intro{
+    width: 100%;
+    padding-right: 0.9375em;
+    padding-left: 0.9375em;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.introbox {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;}
+
+.introtext{
+    margin-left: -12.5em;
+    margin-top: 9.375em;
+    background-color: white;
+    padding: 1rem !important;
+    margin-bottom: 3rem !important;
+}
+.introtext .title {text-transform: capitalize;}
+
+.introtext .subtitle {
+    text-transform: uppercase;
+    font-size: 2rem;
+    padding: 1em 0;
+}
+.introhatch {
+    position: absolute;
+    left: 0;
+    bottom: -2em;
+    width: 100vw;
+    max-width: 100%;
+    height: 3em;
+}
